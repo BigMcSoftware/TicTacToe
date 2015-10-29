@@ -14,7 +14,7 @@ public class TicTacToe {
 	
 	public char getNextMove()
 	{
-		return 'A';
+		return '\0';
 	}
 	
 	public void newGame() 
