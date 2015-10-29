@@ -9,59 +9,56 @@ public class TestTTT {
 		org.junit.runner.JUnitCore.main("testTTT.TestTTT");
 	}
 	
+	private Player p1 = new HumanPlayer("Player1", 'X');
+	private Player p2 = new HumanPlayer("Player2", 'O');
+	
 	@Test
 	public void checkXIsWinnerFirstRow()
 	{
-		TicTacToe TTTGame = new TicTacToe();
-		TTTGame.makeMove('X', 0, 0);
+		TicTacToe TTTGame = new TicTacToe(p1, p2);
+		TTTGame.makeMove(p1, 0, 0);
 		Assert.assertEquals(false, TTTGame.checkForWinner('X'));
-		TTTGame.makeMove('O', 1, 0);
+		TTTGame.makeMove(p2, 1, 0);
 		Assert.assertEquals(false, TTTGame.checkForWinner('O'));
-		TTTGame.makeMove('X', 0, 1);
+		TTTGame.makeMove(p1, 0, 1);
 		Assert.assertEquals(false, TTTGame.checkForWinner('X'));
-		TTTGame.makeMove('O', 1, 1);
+		TTTGame.makeMove(p2, 1, 1);
 		Assert.assertEquals(false, TTTGame.checkForWinner('O'));
-		TTTGame.makeMove('X', 0, 2);
+		TTTGame.makeMove(p1, 0, 2);
 		Assert.assertEquals(true,TTTGame.checkForWinner('X'));
-		//TTTGame.print();
 	}
 	
 	@Test
 	public void checkOIsWinnerSecondRow()
 	{
-		TicTacToe TTTGame = new TicTacToe();
-		TTTGame.makeMove('X', 0, 0);
+		TicTacToe TTTGame = new TicTacToe(p1, p2);
+		TTTGame.makeMove(p1, 0, 0);
 		Assert.assertEquals(false, TTTGame.checkForWinner('X'));
-		TTTGame.makeMove('O', 1, 0);
+		TTTGame.makeMove(p2, 1, 0);
 		Assert.assertEquals(false, TTTGame.checkForWinner('O'));
-		TTTGame.makeMove('X', 2, 2);
+		TTTGame.makeMove(p1, 2, 2);
 		Assert.assertEquals(false, TTTGame.checkForWinner('X'));
-		TTTGame.makeMove('O', 1, 1);
+		TTTGame.makeMove(p2, 1, 1);
 		Assert.assertEquals(false, TTTGame.checkForWinner('O'));
-		TTTGame.makeMove('X', 0, 2);
+		TTTGame.makeMove(p1, 0, 2);
 		Assert.assertEquals(false, TTTGame.checkForWinner('X'));
-		TTTGame.makeMove('O', 1, 2);
+		TTTGame.makeMove(p2, 1, 2);
 		Assert.assertEquals(true,TTTGame.checkForWinner('O'));
-		TTTGame.print();
 	}
 	
 	@Test
 	public void CheckLeftLeaningX()
 	{
-		TicTacToe TTTGame = new TicTacToe();
-		TTTGame.makeMove('X', 0, 0);
+		TicTacToe TTTGame = new TicTacToe(p1, p2);
+		TTTGame.makeMove(p1, 0, 0);
 		Assert.assertEquals(false, TTTGame.checkForWinner('X'));
-		TTTGame.makeMove('O', 1, 0);
+		TTTGame.makeMove(p2, 1, 0);
 		Assert.assertEquals(false, TTTGame.checkForWinner('O'));
-		TTTGame.makeMove('X', 1, 1);
+		TTTGame.makeMove(p1, 1, 1);
 		Assert.assertEquals(false, TTTGame.checkForWinner('X'));
-		TTTGame.makeMove('O', 1, 2);
+		TTTGame.makeMove(p2, 1, 2);
 		Assert.assertEquals(false, TTTGame.checkForWinner('O'));
-		TTTGame.makeMove('X', 2, 2);
+		TTTGame.makeMove(p1, 2, 2);
 		Assert.assertEquals(true, TTTGame.checkForWinner('X'));
-		TTTGame.print();
 	}
-	
-	@Test
-	public void CheckRightLeaningO()
 }

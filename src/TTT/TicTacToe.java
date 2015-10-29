@@ -92,7 +92,7 @@ public class TicTacToe {
 				return true;
 			}
 		}
-		else if (Character.compare(p.getPlayer(), 'X') == 0)
+		else if (Character.compare(p.getPlayer(), 'O') == 0)
 		{
 			if(thePlayBoard.setO(row, column))
 			{
