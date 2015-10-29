@@ -4,6 +4,7 @@ import org.junit.Assert;
 import org.junit.Test;
 
 public class TestTTT {
+	
 	public static void main(String arg[])
 	{
 		org.junit.runner.JUnitCore.main("testTTT.TestTTT");
