@@ -49,7 +49,6 @@ public class Player
 		}
 }
 
-
 class HumanPlayer extends Player 
 {
 	private String nickname;
@@ -94,7 +93,7 @@ class ComputerPlayer extends Player
 		return botAdjectives[StdRandom.uniform(0, botAdjectives.length)] + " " + botNouns[StdRandom.uniform(0, botNouns.length)];
 	}
 	
-	private string nickname;
+	private String nickname;
 	public ComputerPlayer(char player)
 	{
 		super(player);
@@ -119,3 +118,4 @@ class ComputerPlayer extends Player
 		return Integer.toString(StdRandom.uniform(0, 3)).charAt(0);
 	}
 }
+

@@ -1,4 +1,4 @@
-Package TTT;
+package TTT;
 
 import TTT.TTTBoard;
 import TTT.Player;
@@ -53,7 +53,9 @@ public class TicTacToe {
 	//Returns true if the playing board is full.
 	public boolean boardIsFull()
 	{
-		return this.thePlayBoard.boardIsFull();
+		//return this.thePlayBoard.IsFull();
+		return false;
+
 	}
 	
 	//Returns an iterable of current players.
@@ -79,6 +81,16 @@ public class TicTacToe {
 	{
 		p1.setNextSymbol();
 		p2.setNextSymbol();
+	}
+
+	public char getCharAtLocation(int row, int column)
+	{
+		return this.thePlayBoard.getAt(row, column);
+	}
+
+	public char[][] returnBoardToWeb()
+	{
+		return this.thePlayBoard.returnBoard();
 	}
 
 	//returns true if the player can make the move, false otherwise.

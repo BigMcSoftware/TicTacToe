@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+ <html>
+    <head>
+        <title>FalconPunch!</title>
+        <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.2/css/bootstrap.min.css">
+        <style type="text/css">
+            .block {
+                margin-left: auto;
+                margin-right: auto;
+                text-align: center;
+            }
+            .block td {
+                width: 80pt;
+                height: 80pt;
+                border: 1px solid black;
+            }
+            .block .cross {
+                background-image: url('img/cross.jpg');
+                background-size: 100%;
+            }
+            .block .nought {
+                background-image: url('img/nought.jpg');
+                background-size: 100%;
+            }
+            .block table {
+                margin-left: auto;
+                margin-right: auto;
+            }
+            .inputs {
+                text-align: center;
+                margin-left: auto;
+                margin-right: auto;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="container block">
+            <h1>Tic Tac Toe</h1>
+            <h3 id="currPlayer"></h3>
+            <table>
+                <tr id="row0" data-id="0">
+                    <td class="col0" data-id="0"></td>
+                    <td class="col1" data-id="1"></td>
+                    <td class="col2" data-id="2"></td>
+                </tr>
+                <tr id="row1" data-id="1">
+                    <td class="col0" data-id="0"></td>
+                    <td class="col1" data-id="1"></td>
+                    <td class="col2" data-id="2"></td>
+                </tr>
+                <tr id="row2" data-id="2">
+                    <td class="col0" data-id="0"></td>
+                    <td class="col1" data-id="1"></td>
+                    <td class="col2" data-id="2"></td>
+                </tr>
+            </table>
+            <br>
+        </div>
+        <div class="inputs">
+            <button id="btnReset">Reset</button>
+        </div>
+
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+
+        <script>
+            $(document).ready(function() { 
+                resetGame();
+                var btnReset = $("#btnReset");
+                $("td").click(function() {
+                    var row = $(this).parent().data("id");
+                    var col = $(this).data("id");
+                    
+                    insert(row, col);
+                });
+                function insert(row, col) {
+                    $.ajax({
+                        type: 'POST',
+                        url: '/insert/' + row + '/' + col,
+                        data: null,
+                        datatype: "json"
+                    }).done(function(data) {
+                        var last = $("#currPlayer").html();
+                        if (updateElements(data)) {
+                            var editRow = $("#row" + row);
+                            var editCol = editRow.children(".col" + col);
+                            if (last === 'CROSS') {editCol.addClass("cross");}
+                            if (last === 'NOUGHT'){editCol.addClass("nought");}
+                        }
+                    });
+                }
+                btnReset.click(function() {
+                    resetGame();
+                });
+                function resetGame() {
+                    $.ajax({
+                        type: 'POST',
+                        url: '/newgame',
+                        data: null,
+                        datatype: "json"
+                    }).done(function(data) {
+                        updateElements(data);
+                        for (var i = 0; i < 3; i++) {
+                            var editRow = $("#row" + i);
+                            for (var j = 0; j < 3; j++) {
+                                editRow.children(".col" + j).attr("class", "col" + j);
+                            };
+                        };
+                    });
+                }
+                function updateElements(data) {
+                    var json = JSON.parse(data);
+                    if (!json.hasOwnProperty('Error')) {
+                        if (json.State == 'PLAYING') {
+                            $("#currPlayer").html(json.CurrentPlayer);
+                        }
+                        else {
+                            $("#currPlayer").html(json.State);
+                        }
+                        return true;
+                    }
+                    return false;
+                }
+            });
+        </script>
+    </body>
+</html>

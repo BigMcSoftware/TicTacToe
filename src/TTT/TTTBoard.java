@@ -21,7 +21,17 @@ public class TTTBoard {
 	
 	public boolean isFull()
 	{
-		
+		for(int i = 0; i < bSize; i++)
+		{
+			for(int j = 0; j < bSize; j++)
+			{
+				if(Character.compare(board[i][j], '\0') == 0)
+				{
+					return false;
+				}
+			}
+		}
+		return true;	
 	}
 	
 	
@@ -32,6 +42,10 @@ public class TTTBoard {
 		return 'f';		
 	}
 	
+	public char[][] returnBoard()
+	{
+		return board;
+	}
 	public boolean setX(int row, int column)
 	{
 		if (row < 0 || column < 0 || row >= bSize || column >= bSize)

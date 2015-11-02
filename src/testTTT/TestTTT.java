@@ -1,5 +1,8 @@
 package testTTT;
 
+import TTT.Player;
+import TTT.TTTBoard;
+import TTT.TicTacToe;
 import org.junit.Assert;
 import org.junit.Test;
 

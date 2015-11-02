@@ -1,1 +1,2 @@
-build script
+#!/bin/bash
+./gradlew build
