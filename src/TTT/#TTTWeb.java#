@@ -45,10 +45,8 @@ public class TTTWeb implements SparkApplication
 			Player p1R = new HumanPlayer(req.queryParams("name1"), 'X'); 
 			Player p2R = new HumanPlayer(req.queryParams("name2"), 'O'); 
 			this.setPlayers(p1R, p2R);
-			JSONObject json = new JSONObject();
-			
-			json.put("CurrentPlayer", TicTacToeRun.getNextMove());
-			return json;
+			res.type("application/json");
+			return dataToJson("Currentplayer": 
 			});
 	
 	post("/move", (req, res) -> {

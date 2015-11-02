@@ -14,12 +14,33 @@ h2
 .popUp
 {
 	position: absolute;
-	height: 400px;
-	width: 400px;
+	height: 500px;
+	width: 360px;
 	background-color: red;
 	left: calc(50% - 200px);
 	background-color: rgb(147, 221, 230);
 	border-radius: 20px;
+
+	padding: 20px;
+}
+
+.popUp input
+{
+	border: 0;
+	border-radius: 10px;
+	padding: 7px;
+	margin: 5px;
+
+	width: 350px;
+}
+
+.popUp button
+{
+	border: 0;
+	border-radius: 10px;
+	background-color: gray;
+	padding: 10px;
+
 }
 
 .game
@@ -37,6 +58,8 @@ h2
 	text-align: center;
 
 	transition: all .2s ease-in-out;
+	color: white;
+	font-size: 40px;
 }
 
 .tile:hover
@@ -64,7 +87,7 @@ h2
 }
 
 .gameMenu button:hover
-{
+{	
 	background-color: rgb(60, 60, 60);
-	transform: scale(1.05);
+	transform: scale(1.1);
 }
