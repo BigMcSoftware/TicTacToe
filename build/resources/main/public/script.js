@@ -1,9 +1,23 @@
 var p1, p2;
-var amgems = 1;
 function nameFunction() {
     p1 = document.getElementById("p1").value;
     p2 = document.getElementById("p2").value;
+    var names = {
+        "name1": p1,
+        "name2": p2
+    }
+    var json = JSON.stringify(names);
+    $.ajax({
+        url:"/newGame",
+        type: "post",
+        datatype: "JSON",
+        data: json,
+        contentType: 'application/json; charset=utf-8',
+        success: function() {
+            alert("smegma");
+        }
 
+    });
     var pop;
     pop = document.getElementsByClassName("popUp");
     pop[0].style.visibility="hidden";
