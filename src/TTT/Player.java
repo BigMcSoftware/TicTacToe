@@ -49,6 +49,7 @@ public class Player
 		}
 }
 
+/*
 class HumanPlayer extends Player 
 {
 	private String nickname;
@@ -118,4 +119,4 @@ class ComputerPlayer extends Player
 		return Integer.toString(StdRandom.uniform(0, 3)).charAt(0);
 	}
 }
-
+*/

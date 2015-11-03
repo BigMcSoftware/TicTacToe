@@ -272,7 +272,7 @@ public class TTTConsole {
 		String input = StdIn.readString();
 		if(input.compareTo("y") == 0 || input.compareTo("Y") == 0)
 		{
-			if(tc.changePlayerSymbols()){}
+			tc.changePlayerSymbols();
 			return true;
 		}
 		else if(input.compareTo("n") == 0 | input.compareTo("N") == 0)
@@ -426,7 +426,7 @@ public class TTTConsole {
 		TTTConsole ttt = null;
 		do {
 			ttt = new TTTConsole(p1, p2);
-			assert(ttt != null);
+			//assert(ttt != null);
 			//TicTacToe t = new TicTacToe();
 			if(firstGame){
 				ttt.displayWelcomeMessage();
@@ -434,7 +434,7 @@ public class TTTConsole {
 			}
 			ttt.displayNamesAndSymbols();
 			firstGame = false;
-			assert(p1 != null & p2 != null);
+			//assert(p1 != null & p2 != null);
 			ttt.play();
 		} while(playAgain(ttt));
 	}
@@ -453,7 +453,7 @@ public class TTTConsole {
 		{
 			Player currentPlayer = getPlayerWithSymbol(getNextMove());
 			displayPlayerTurn(currentPlayer);
-			assert(currentPlayer == null);
+			//assert(currentPlayer == null);
 			char row = getPlayerRow(currentPlayer);
 			if(!specialInput(row))
 			{

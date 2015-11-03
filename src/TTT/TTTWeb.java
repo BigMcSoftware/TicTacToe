@@ -5,6 +5,8 @@ import static spark.Spark.*;
 import spark.servlet.SparkApplication;
 import TTT.TicTacToe;
 import TTT.Player;
+import TTT.HumanPlayer;
+import TTT.ComputerPlayer;
 import org.json.simple.JSONObject;
 import edu.princeton.cs.algs4.StdOut;
 
