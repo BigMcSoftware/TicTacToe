@@ -1,5 +1,4 @@
 #!/bin/bash -e
-PORT=1337
 APP="TicTacToe"
 
 #Deploy new version

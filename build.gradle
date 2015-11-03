@@ -9,8 +9,9 @@ apply plugin: 'application'
 mainClassName = "TTT.TTTWeb"
 
 version = '1.0'
-/*
+
 jar{
+	destinationDir = file('jar')
 	manifest{
 		attributes ('Main-Class': "TTT.TTTConsole", 
 			    'Implementation-Title': 'RESTAPIClientAutomation',
@@ -23,9 +24,10 @@ jar{
 	from {
     		configurations.compile.collect { it.isDirectory() ? it : zipTree(it) }
   	}
-}*/
+}
 
 task  guiJar (type: Jar) {
+	destinationDir = file('jar')
 	baseName = project.name + '-gui'
 	manifest{
                 attributes ('Main-Class': "TTT.TTTGui",
