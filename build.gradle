@@ -3,12 +3,25 @@
 apply plugin: 'java'
 apply plugin: 'application'
 //apply plugin: 'eclipse'
-//apply plugin: 'pmd'  //code inspect
-//apply plugin: 'jacoco' //code coverage
+apply plugin: 'pmd'  //code inspect
+apply plugin: 'jacoco' //code coverage
 
 mainClassName = "TTT.TTTWeb"
 
 version = '1.0'
+
+jacoco {
+    reportsDir = file("$buildDir/reports/jacoco")
+}
+
+jacocoTestReport {
+    dependsOn test
+}
+
+task publishReport(type: Copy, dependsOn: jacocoTestReport) {
+    from("$buildDir/reports/jacoco/test/html")
+    into("src/resources/public/report")
+}
 
 jar{
 	destinationDir = file('jar')
@@ -58,11 +71,11 @@ sourceSets{
 			srcDir 'src/resources/'
 		}
 	}
-	/*test{
+	test{
 		java{
 			srcDir 'src/testTTT'
 		}
-	}*/
+	}
 }
 
 // In this section you declare where to find the dependencies of your project

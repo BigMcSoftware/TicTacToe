@@ -2,6 +2,8 @@ package TTT;
 
 import TTT.TTTBoard;
 import TTT.Player;
+import TTT.HumanPlayer;
+import TTT.ComputerPlayer;
 import java.util.ArrayList;
 
 public class TicTacToe {
@@ -94,21 +96,15 @@ public class TicTacToe {
 	//returns true if the player can make the move, false otherwise.
 	public boolean makeMove(Player p, int row, int column)
 	{
-		if (Character.compare(p.getPlayer(), 'X') == 0)
+		if (Character.compare(p.getPlayer(), 'X') == 0 && thePlayBoard.setX(row, column))
 		{
-			if(thePlayBoard.setX(row, column))
-			{
 				this.nextMove = 'O';
 				return true;
-			}
 		}
-		else if (Character.compare(p.getPlayer(), 'O') == 0)
+		else if (Character.compare(p.getPlayer(), 'O') == 0 && thePlayBoard.setO(row, column))
 		{
-			if(thePlayBoard.setO(row, column))
-			{
 				this.nextMove = 'X';
 				return true;
-			}
 		}
 		return false;
 	}

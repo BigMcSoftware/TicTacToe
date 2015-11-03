@@ -1,10 +1,11 @@
 package testTTT;
 
 import TTT.Player;
+import TTT.HumanPlayer;
 import TTT.TTTBoard;
 import TTT.TicTacToe;
-import org.junit.Assert;
-import org.junit.Test;
+import org.junit.*;
+import org.junit.*;
 
 public class TestTTT {
 	

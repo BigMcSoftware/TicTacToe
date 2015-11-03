@@ -1,7 +1,9 @@
 package TTT;
 
 import TTT.TicTacToe;
-
+import TTT.Player;
+import TTT.HumanPlayer;
+import TTT.ComputerPlayer;
 import javax.swing.*;
 import javax.swing.border.BevelBorder;
 
