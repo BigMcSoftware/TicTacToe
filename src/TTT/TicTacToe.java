@@ -53,9 +53,7 @@ public class TicTacToe {
 	//Returns true if the playing board is full.
 	public boolean boardIsFull()
 	{
-		//return this.thePlayBoard.IsFull();
-		return false;
-
+		return this.thePlayBoard.isFull();
 	}
 	
 	//Returns an iterable of current players.

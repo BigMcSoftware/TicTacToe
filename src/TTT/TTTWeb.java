@@ -123,6 +123,7 @@ public class TTTWeb implements SparkApplication
 					json.put("IsBoardFull",TicTacToeRun.boardIsFull());
 					json.put("Name",TicTacToeRun.getPlayerWithSymbol('X').getNickname());
 					StdOut.println(json);
+					TicTacToeRun.displayPlayBoard();
 					return json;			
 				}
 				else
@@ -130,7 +131,9 @@ public class TTTWeb implements SparkApplication
 					json.put("makeMove",makeMove(Integer.parseInt(moves[1]),'O'));
 					json.put("Winner",TicTacToeRun.checkForWinner('O'));
                                         json.put("IsBoardFull",TicTacToeRun.boardIsFull());
-					json.put("Name",TicTacToeRun.getPlayerWithSymbol('X').getNickname());
+					json.put("Name",TicTacToeRun.getPlayerWithSymbol('O').getNickname());
+					StdOut.println(json);
+					TicTacToeRun.displayPlayBoard();
 					return json;
 				}
 			});

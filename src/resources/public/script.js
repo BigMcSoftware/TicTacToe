@@ -87,7 +87,7 @@ function pressTile(clicked_id) {
         }
     }
     if (Winner && thereIsAWinner == false) { thereIsAWinner = true; alert("We have a winner: " + name)}
-    if (IsBoardFull) { thereIsAWinner = true; alert("TIE!!!!!")}
+    if (IsBoardFull && thereIsAWinner == false) { thereIsAWinner = true; alert("Tie!")}
 };
 
 function quitGame()
@@ -109,7 +109,6 @@ function quitGame()
    document.getElementById("8").innerHTML = "";
    document.getElementById("9").innerHTML = "";
    thereIsAWinner = false;
-
 }
 
 function vsP()
