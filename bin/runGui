@@ -1,0 +1,3 @@
+#!/bin/bash
+
+java -jar jar/TicTacToe-gui-1.0.jar
