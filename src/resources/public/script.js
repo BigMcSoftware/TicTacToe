@@ -110,13 +110,3 @@ function quitGame()
    document.getElementById("9").innerHTML = "";
    thereIsAWinner = false;
 }
-
-function vsP()
-{
-
-}
-
-function vsAI()
-{
-	
-}

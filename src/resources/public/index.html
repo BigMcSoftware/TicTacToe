@@ -11,10 +11,9 @@
 	<div class="popUp">
 	
 		<h1> Welcome </h1>
-		<p> Names of players </p>
-		  Player 1: <input type="text" name="p1" id="p1"><br>
-		  Player 2: <input type="text" name="p2" id="p2"><br><br>
-		  <button onclick="nameFunction()" id="submitbutton"> Begin </button>
+		<input type="text" name="p1" id="p1" value="player1"><br>
+		<input type="text" name="p2" id="p2" value="player1"><br><br>
+		<button onclick="nameFunction()" id="submitbutton"> BEGIN </button>
 	</div>
 
 <div class="game">
@@ -39,9 +38,6 @@
 		<div class="gameMenu">
 			<button onclick="newGame()">New Game</button>
 			<button onclick="quitGame()">Quit Game</button>
-
-			<button onclick="vsP()">versus Player</button>
-			<button onclick="vsAI()">versus AI</button>
 		</div>
 		<h2 id="names"></h2>
 	</div>
